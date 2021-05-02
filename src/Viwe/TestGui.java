@@ -13,22 +13,33 @@ public class TestGui extends JFrame {
 
     private JPanel root;
     private JLabel Label;
-    private JTextField AB1;
     private JButton rotButton;
     private JButton blauButton;
     private JButton grünButton;
     private JButton gelbButton;
     private JButton standartfarbeButton;
     private JButton farbeWählenButton;
+    private JLabel Aufgabe1;
+    private JLabel Aufgabe2;
+    private JTextField TextField;
+    private JButton arialButton;
+    private JButton comicSansMSButton;
+    private JButton courierNewButton;
+    private JButton schreibenButton;
+    private JButton löschenButton;
+    private JLabel Aufgabe3;
+    private JButton redButton;
+    private JButton blueButton;
+    private JButton greenButton;
+    int size =11;
 
     public TestGui(){
         //This use the form designer fro,
         add(root);
 
         setTitle("Ich bin ein GUI");
-        setSize(400,500);
+        setSize(500,600);
         setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
-
 
 
         rotButton.addActionListener(new ActionListener() {
@@ -78,7 +89,70 @@ public class TestGui extends JFrame {
 
             }
         });
+
+
+
+
+        //Schriftart
+        arialButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                Font arial = new Font("Arial", Font.PLAIN + Font.ITALIC, size );
+                Label.setFont(arial);
+            }
+        });
+        comicSansMSButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                Font comicSansMS = new Font("Comic Sans MS", Font.PLAIN + Font.ITALIC,size);
+                Label.setFont(comicSansMS);
+
+            }
+        });
+        courierNewButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                Font courier = new Font("Courier", Font.PLAIN + Font.ITALIC, size);
+                Label.setFont(courier);
+            }
+        });
+
+
+        schreibenButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                Label.setText(TextField.getText());
+            }
+        });
+        löschenButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                Label.setText("");
+
+            }
+        });
+
+        //Schriftfarbe ändern
+        redButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                Label.setForeground(Color.RED);
+            }
+        });
+        blueButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                Label.setForeground(Color.BLUE);
+            }
+        });
+        greenButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                Label.setForeground(Color.GREEN);
+            }
+        });
     }
+
     //Hintergrund Farben
     public void G_clicked() {
         this.root.setBackground(java.awt.Color.GREEN);
@@ -95,11 +169,13 @@ public class TestGui extends JFrame {
     }
     //normale Hintergrundfarbe
     public void Grau_clicked() {
+       // 239, 239, 239
 
-        Color hintergrund = new Color(65, 68, 80);
+        Color hintergrund = new Color(239, 239, 239);
 
         root.setBackground(hintergrund);
     }
+
 
 
 
