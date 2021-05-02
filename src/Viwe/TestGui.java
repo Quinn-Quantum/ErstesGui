@@ -32,6 +32,12 @@ public class TestGui extends JFrame {
     private JLabel Aufgabe4;
     private JButton plusbutton;
     private JButton minusbutton;
+    private JLabel Aufgabe5;
+    private JButton linksbündigButton;
+    private JButton zentriertButton;
+    private JButton rechtsbündigButton;
+    private JLabel Aufgabe6;
+    private JButton EXITButton;
     int size =11;
     private String name;
 
@@ -50,6 +56,7 @@ public String getName(String name){
         setTitle("Ich bin ein GUI");
         setSize(500,600);
         setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
+
 
         setName("Dialog");
 
@@ -184,6 +191,28 @@ public String getName(String name){
                 size --;
                 Label.setFont(new Font(getName(),Font.PLAIN + Font.ITALIC,size));}
                 else Label.setFont(new Font(getName(),Font.PLAIN + Font.ITALIC,size));
+            }
+        });
+
+        //Textausrichten
+        //einmal mit Swing und 2mal mit JLABEL
+        linksbündigButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+              Label.setHorizontalAlignment(SwingConstants.LEFT);
+            }
+        });
+        zentriertButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                Label.setHorizontalAlignment(JLabel.CENTER);
+
+            }
+        });
+        rechtsbündigButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                Label.setHorizontalAlignment(JLabel.RIGHT);
             }
         });
     }
