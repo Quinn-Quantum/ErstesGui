@@ -5,8 +5,6 @@ import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
-import static java.awt.Color.RGBtoHSB;
-
 
 public class TestGui extends JFrame {
 
@@ -31,7 +29,19 @@ public class TestGui extends JFrame {
     private JButton redButton;
     private JButton blueButton;
     private JButton greenButton;
+    private JLabel Aufgabe4;
+    private JButton plusbutton;
+    private JButton minusbutton;
     int size =11;
+    private String name;
+
+    public void setName(){
+        this.name =name;
+    }
+public String getName(String name){
+        return name;}
+
+
 
     public TestGui(){
         //This use the form designer fro,
@@ -41,6 +51,7 @@ public class TestGui extends JFrame {
         setSize(500,600);
         setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
 
+        setName("Dialog");
 
         rotButton.addActionListener(new ActionListener() {
             @Override
@@ -98,6 +109,7 @@ public class TestGui extends JFrame {
             @Override
             public void actionPerformed(ActionEvent e) {
                 Font arial = new Font("Arial", Font.PLAIN + Font.ITALIC, size );
+                setName("Arial");
                 Label.setFont(arial);
             }
         });
@@ -105,6 +117,7 @@ public class TestGui extends JFrame {
             @Override
             public void actionPerformed(ActionEvent e) {
                 Font comicSansMS = new Font("Comic Sans MS", Font.PLAIN + Font.ITALIC,size);
+                setName("Comic Sans MS");
                 Label.setFont(comicSansMS);
 
             }
@@ -113,6 +126,7 @@ public class TestGui extends JFrame {
             @Override
             public void actionPerformed(ActionEvent e) {
                 Font courier = new Font("Courier", Font.PLAIN + Font.ITALIC, size);
+                setName("Courier");
                 Label.setFont(courier);
             }
         });
@@ -149,6 +163,27 @@ public class TestGui extends JFrame {
             @Override
             public void actionPerformed(ActionEvent e) {
                 Label.setForeground(Color.GREEN);
+            }
+        });
+
+        //Schrift größe
+        plusbutton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                if(e.getSource() == plusbutton){
+                   size ++ ;
+                   Label.setFont(new Font(getName(),Font.PLAIN + Font.ITALIC,size));
+                }
+
+            }
+        });
+        minusbutton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                if (size >0){
+                size --;
+                Label.setFont(new Font(getName(),Font.PLAIN + Font.ITALIC,size));}
+                else Label.setFont(new Font(getName(),Font.PLAIN + Font.ITALIC,size));
             }
         });
     }
