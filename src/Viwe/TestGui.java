@@ -215,6 +215,12 @@ public String getName(String name){
                 Label.setHorizontalAlignment(JLabel.RIGHT);
             }
         });
+        EXITButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                System.exit(0);
+            }
+        });
     }
 
     //Hintergrund Farben
