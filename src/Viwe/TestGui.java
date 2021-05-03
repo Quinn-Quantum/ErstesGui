@@ -41,12 +41,12 @@ public class TestGui extends JFrame {
     int size =11;
     private String name;
 
+
     public void setName(){
         this.name =name;
     }
-public String getName(String name){
+    public String getName(String name){
         return name;}
-
 
 
     public TestGui(){
@@ -54,8 +54,10 @@ public String getName(String name){
         add(root);
 
         setTitle("Ich bin ein GUI");
-        setSize(500,600);
+        setSize(700,600);
         setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
+        setResizable(false); //Fenster bleibt auf setSize
+
 
 
         setName("Dialog");
@@ -138,7 +140,7 @@ public String getName(String name){
             }
         });
 
-
+        //Label bearbeiten
         schreibenButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -245,10 +247,6 @@ public String getName(String name){
 
         root.setBackground(hintergrund);
     }
-
-
-
-
 
 
     private void createUIComponents() {
