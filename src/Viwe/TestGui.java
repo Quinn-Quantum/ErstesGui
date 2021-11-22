@@ -48,17 +48,14 @@ public class TestGui extends JFrame {
     public String getName(String name){
         return name;}
 
-
     public TestGui(){
         //This use the form designer fro,
         add(root);
 
         setTitle("Ich bin ein GUI");
-        setSize(700,600);
+        setSize(800,600);
         setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
         setResizable(false); //Fenster bleibt auf setSize
-
-
 
         setName("Dialog");
 
@@ -78,7 +75,6 @@ public class TestGui extends JFrame {
             @Override
             public void actionPerformed(ActionEvent e) {
                 G_clicked();
-
             }
         });
         gelbButton.addActionListener(new ActionListener() {
@@ -92,26 +88,16 @@ public class TestGui extends JFrame {
             public void actionPerformed(ActionEvent e) {
 
                 Grau_clicked();
-
             }
         });
 
         farbeWählenButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-
-               if(e.getSource() == farbeWählenButton){
-                   JColorChooser farbAuswahl = new JColorChooser();
-
                    Color farben = JColorChooser.showDialog(null, "pick a color", Color.white);
                    root.setBackground(farben);
-               }
-
             }
         });
-
-
-
 
         //Schriftart
         arialButton.addActionListener(new ActionListener() {
@@ -128,7 +114,6 @@ public class TestGui extends JFrame {
                 Font comicSansMS = new Font("Comic Sans MS", Font.PLAIN + Font.ITALIC,size);
                 setName("Comic Sans MS");
                 Label.setFont(comicSansMS);
-
             }
         });
         courierNewButton.addActionListener(new ActionListener() {
@@ -150,8 +135,7 @@ public class TestGui extends JFrame {
         löschenButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                Label.setText("");
-
+                Label.setText(null);
             }
         });
 
@@ -179,11 +163,8 @@ public class TestGui extends JFrame {
         plusbutton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                if(e.getSource() == plusbutton){
                    size ++ ;
                    Label.setFont(new Font(getName(),Font.PLAIN + Font.ITALIC,size));
-                }
-
             }
         });
         minusbutton.addActionListener(new ActionListener() {
@@ -208,7 +189,6 @@ public class TestGui extends JFrame {
             @Override
             public void actionPerformed(ActionEvent e) {
                 Label.setHorizontalAlignment(JLabel.CENTER);
-
             }
         });
         rechtsbündigButton.addActionListener(new ActionListener() {
@@ -220,7 +200,7 @@ public class TestGui extends JFrame {
         EXITButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                System.exit(0);
+
             }
         });
     }
@@ -232,7 +212,6 @@ public class TestGui extends JFrame {
     public void Gelb_clicked() {
         this.root.setBackground(java.awt.Color.YELLOW);
     }
-
     public void Red_clicked() {
         this.root.setBackground(java.awt.Color.RED);
     }
@@ -242,12 +221,10 @@ public class TestGui extends JFrame {
     //normale Hintergrundfarbe
     public void Grau_clicked() {
        // 239, 239, 239
-
         Color hintergrund = new Color(239, 239, 239);
 
         root.setBackground(hintergrund);
     }
-
 
     private void createUIComponents() {
         // TODO: place custom component creation code here
